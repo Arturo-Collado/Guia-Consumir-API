@@ -53,7 +53,8 @@ init();
 
 async function agregarEstudiante(estudiante) {
     try {
-        const response = await fetch('https://dsi-strapi.onrender.com/api/estudiantes', {
+        
+        const response = await fetch('http://localhost:1337/api/estudiantes', { // <-- ¡CORREGIDO!
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -132,7 +133,8 @@ tabla.addEventListener('click', async (e) => {
 
 async function actualizarEstudiante(docId, estudiante) {
     try {
-        const response = await fetch(`https://dsi-strapi.onrender.com/api/estudiantes/${docId}`, {
+      
+        const response = await fetch(`http://localhost:1337/api/estudiantes/${docId}`, { // <-- ¡CORREGIDO!
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ data: estudiante })
